@@ -24,26 +24,15 @@ function getComputerChoice() {
     }
 }
 
-function getPlayerChoice() {
-    let selection;
-
-    switch (choice) {
-        case "rock":
-            selection = document.querySelector("#rockButton");
-            break;
-        case "paper":
-            selection = document.querySelector("#paperButton");
-            break;
-        case "scissors":
-            selection = document.querySelector("#scissorsButton")
-            break;
+function getPlayerChoice(button) {
+    if (button === rockButton) {
+        return "rock";
+    } else if (button === paperButton) {
+        return "paper";
+    } else if (button === scissorsButton) {
+        return "scissors";
     }
-
-    
-    console.log("The button works :D");
 }
-
-
 
 function playRound(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
@@ -67,11 +56,16 @@ function playRound(playerChoice, computerChoice) {
     }
 }
 
-gameButton.forEach((button) => { 
+gameButton.forEach((button) => {
     button.addEventListener("click", () => {
-        (playRound());
+        let playerChoice = getPlayerChoice(button);
+        let computerChoice = getComputerChoice();
+        console.log(`Computer's Choice: ${computerChoice}`)
+        console.log(`Player's Choice: ${playerChoice}`);
+
+        playRound(playerChoice, computerChoice);
     })
-});
+})
 // function playGame() {
 //    let playerSelection;
 //    let computerSelection;
