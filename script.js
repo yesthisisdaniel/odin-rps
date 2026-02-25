@@ -3,6 +3,8 @@ let computerScore = 0;
 const rockButton = document.querySelector("#rockButton");
 const paperButton = document.querySelector("#paperButton");
 const scissorsButton = document.querySelector("#scissorsButton");
+const playerScoreText = document.querySelector("#playerScoreContainer")
+const computerScoreText = document.querySelector("#computerScoreContainer")
 
 const gameButton = document.querySelectorAll(".gameButton");
 
@@ -37,20 +39,19 @@ function getPlayerChoice(button) {
 function playRound(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
         console.log("It's a tie!")
-        console.log(`Player score: ${playerScore} : computerScore: ${computerScore}`)
+        
     }
     else if (playerChoice === "rock" && computerChoice === "scissors" ||
              playerChoice === "paper" && computerChoice === "rock" ||
              playerChoice === "scissors" && computerChoice === "paper"
     ) {
         playerScore++;
-        console.log(`You win! ${playerChoice} beats ${computerChoice}`)
-        console.log(`Player score: ${playerScore} : computerScore: ${computerScore}`)
+        playerScoreText.textContent = `Player Score: ${playerScore}`
     }
     else {
         computerScore++;
         console.log(`You lose! ${computerChoice} beats ${playerChoice}`)
-        console.log(`Player score: ${playerScore} : computerScore: ${computerScore}`)
+        computerScoreText.textContent = `Computer Score: ${computerScore}`
     }
 
     if (playerScore === 5) {
