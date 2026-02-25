@@ -49,42 +49,45 @@ function playRound(playerChoice, computerChoice) {
     }
 }
 
-// const playerSelection = getPlayerChoice();
-// const computerSelection = getComputerChoice();
+const rockButton = document.querySelector("#rockButton");
+const paperButton = document.querySelector("#paperButton");
+const scissorsButton = document.querySelector("#scissorsButton")
+const gameButton = document.querySelector("gameButton")
 
-function playGame() {
-   let playerSelection;
-   let computerSelection;
+gameButton.addEventListener("click", () => console.log("hello world!"));
+// function playGame() {
+//    let playerSelection;
+//    let computerSelection;
 
-    playerSelection = getPlayerChoice().toLowerCase();
-    computerSelection = getComputerChoice()
-    playRound(playerSelection, computerSelection);
+//     playerSelection = getPlayerChoice().toLowerCase();
+//     computerSelection = getComputerChoice()
+//     playRound(playerSelection, computerSelection);
     
     
-    playerSelection = getPlayerChoice().toLowerCase();
-    computerSelection = getComputerChoice()
-    playRound(playerSelection, computerSelection);
+//     playerSelection = getPlayerChoice().toLowerCase();
+//     computerSelection = getComputerChoice()
+//     playRound(playerSelection, computerSelection);
     
 
-    playerSelection = getPlayerChoice().toLowerCase();
-    computerSelection = getComputerChoice()
-    playRound(playerSelection, computerSelection);
+//     playerSelection = getPlayerChoice().toLowerCase();
+//     computerSelection = getComputerChoice()
+//     playRound(playerSelection, computerSelection);
     
 
-    playerSelection = getPlayerChoice().toLowerCase();
-    computerSelection = getComputerChoice()
-    playRound(playerSelection, computerSelection);
+//     playerSelection = getPlayerChoice().toLowerCase();
+//     computerSelection = getComputerChoice()
+//     playRound(playerSelection, computerSelection);
     
 
-    playerSelection = getPlayerChoice().toLowerCase();
-    computerSelection = getComputerChoice()
-    playRound(playerSelection, computerSelection);
+//     playerSelection = getPlayerChoice().toLowerCase();
+//     computerSelection = getComputerChoice()
+//     playRound(playerSelection, computerSelection);
 
-    console.log("You chose " + playerSelection);
-    console.log("PC chose " + computerSelection);
-}
+//     console.log("You chose " + playerSelection);
+//     console.log("PC chose " + computerSelection);
+// }
     
 
-playGame()
-console.log(playerScore, computerScore)
+// playGame()
+// console.log(playerScore, computerScore)
 
