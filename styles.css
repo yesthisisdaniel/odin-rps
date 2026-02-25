@@ -31,3 +31,14 @@ h1 {
   margin-right: 500px;
 }
 
+#newGameButton {
+  height: 75px;
+  width: 150px;
+  font-size: 24px;
+}
+
+#newGameButtonContainer {
+  display: flex;
+  justify-content: center;
+}
+
