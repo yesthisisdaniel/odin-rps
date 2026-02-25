@@ -13,3 +13,10 @@ h1 {
     margin-left: 500px;
     margin-right: 500px;
 }
+
+#scoreContainer {
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+  gap: 20px;
+}
