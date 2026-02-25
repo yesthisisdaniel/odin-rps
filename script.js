@@ -5,6 +5,7 @@ const paperButton = document.querySelector("#paperButton");
 const scissorsButton = document.querySelector("#scissorsButton");
 const playerScoreText = document.querySelector("#playerScoreContainer")
 const computerScoreText = document.querySelector("#computerScoreContainer")
+const gameMessageText = document.querySelector("#gameMessageContainer")
 
 const gameButton = document.querySelectorAll(".gameButton");
 
@@ -38,7 +39,7 @@ function getPlayerChoice(button) {
 
 function playRound(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
-        console.log("It's a tie!")
+        gameMessageText.textContent = "It's a tie.... equal skill perhaps?"
         
     }
     else if (playerChoice === "rock" && computerChoice === "scissors" ||
@@ -47,18 +48,20 @@ function playRound(playerChoice, computerChoice) {
     ) {
         playerScore++;
         playerScoreText.textContent = `Player Score: ${playerScore}`
+        gameMessageText.textContent = "Impressive... but can you still win?"
     }
     else {
         computerScore++;
         console.log(`You lose! ${computerChoice} beats ${playerChoice}`)
         computerScoreText.textContent = `Computer Score: ${computerScore}`
+        gameMessageText.textContent = "The day where computers take over the world is nigh."
     }
 
     if (playerScore === 5) {
-        alert("You win!!!")
+        gameMessageText.textContent = "Nice win kid, now don't get cocky."
     }
     else if (computerScore === 5) {
-        alert("You lose! :(")
+        gameMessageText.textContent = "I've seen this happen in Terminator 2..."
     }
 }
 
