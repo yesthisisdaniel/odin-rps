@@ -37,6 +37,14 @@ function getPlayerChoice(button) {
     }
 }
 
+function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+    playerScoreText.textContent = `Player Score: ${playerScore}`
+    computerScoreText.textContent = `Computer Score: ${computerScore}`
+    gameMessageText.textContent = "There can only be one."
+}
+
 function playRound(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
         gameMessageText.textContent = "It's a tie.... equal skill perhaps?"
@@ -59,10 +67,15 @@ function playRound(playerChoice, computerChoice) {
 
     if (playerScore === 5) {
         gameMessageText.textContent = "Nice win kid, now don't get cocky."
+        resetGame();
     }
     else if (computerScore === 5) {
         gameMessageText.textContent = "I've seen this happen in Terminator 2..."
+        resetGame();
     }
+
+    
+
 }
 
 gameButton.forEach((button) => {
