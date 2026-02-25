@@ -19,4 +19,15 @@ h1 {
   justify-content: center;
   margin: 50px;
   gap: 20px;
+  background-color: aliceblue;
 }
+
+#gameMessageContainer {
+  display: flex;
+  justify-content: center;
+  font-style: italic;
+  background-color: peachpuff;
+  margin-left: 500px;
+  margin-right: 500px;
+}
+
