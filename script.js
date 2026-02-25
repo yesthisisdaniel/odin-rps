@@ -1,5 +1,10 @@
 let playerScore = 0;
 let computerScore = 0;
+const rockButton = document.querySelector("#rockButton");
+const paperButton = document.querySelector("#paperButton");
+const scissorsButton = document.querySelector("#scissorsButton");
+
+const gameButton = document.querySelectorAll(".gameButton");
 
 function getComputerChoice() {
     let scissors = "scissors";
@@ -19,10 +24,23 @@ function getComputerChoice() {
     }
 }
 
-function getPlayerChoice () {
-    let selection = prompt("What is your choice?");
+function getPlayerChoice() {
+    let selection;
 
-    return selection;
+    switch (choice) {
+        case "rock":
+            selection = document.querySelector("#rockButton");
+            break;
+        case "paper":
+            selection = document.querySelector("#paperButton");
+            break;
+        case "scissors":
+            selection = document.querySelector("#scissorsButton")
+            break;
+    }
+
+    
+    console.log("The button works :D");
 }
 
 
@@ -49,12 +67,11 @@ function playRound(playerChoice, computerChoice) {
     }
 }
 
-const rockButton = document.querySelector("#rockButton");
-const paperButton = document.querySelector("#paperButton");
-const scissorsButton = document.querySelector("#scissorsButton")
-const gameButton = document.querySelector("gameButton")
-
-gameButton.addEventListener("click", () => console.log("hello world!"));
+gameButton.forEach((button) => { 
+    button.addEventListener("click", () => {
+        (playRound());
+    })
+});
 // function playGame() {
 //    let playerSelection;
 //    let computerSelection;
