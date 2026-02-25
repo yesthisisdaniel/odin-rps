@@ -6,6 +6,7 @@ const scissorsButton = document.querySelector("#scissorsButton");
 const playerScoreText = document.querySelector("#playerScoreContainer")
 const computerScoreText = document.querySelector("#computerScoreContainer")
 const gameMessageText = document.querySelector("#gameMessageContainer")
+const newGameButton = document.querySelector("#newGameButton")
 
 const gameButton = document.querySelectorAll(".gameButton");
 
@@ -73,9 +74,6 @@ function playRound(playerChoice, computerChoice) {
         gameMessageText.textContent = "I've seen this happen in Terminator 2..."
         resetGame();
     }
-
-    
-
 }
 
 gameButton.forEach((button) => {
@@ -87,5 +85,9 @@ gameButton.forEach((button) => {
 
         playRound(playerChoice, computerChoice);
     })
+})
+
+newGameButton.addEventListener("click", () => {
+    resetGame();
 })
 
