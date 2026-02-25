@@ -37,22 +37,27 @@ function getPlayerChoice(button) {
 function playRound(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
         console.log("It's a tie!")
+        console.log(`Player score: ${playerScore} : computerScore: ${computerScore}`)
     }
-    else if (playerChoice === "rock" && computerChoice === "scissors") {
+    else if (playerChoice === "rock" && computerChoice === "scissors" ||
+             playerChoice === "paper" && computerChoice === "rock" ||
+             playerChoice === "scissors" && computerChoice === "paper"
+    ) {
         playerScore++;
-        console.log("You win! " + playerChoice + " beats " + computerChoice)
-    }
-    else if (playerChoice === "scissors" && computerChoice === "paper") {
-        playerScore++;
-        console.log("You win! " + playerChoice + " beats " + computerChoice)
-    }
-    else if (playerChoice === "paper" && computerChoice === "rock") {
-        playerScore++;
-        console.log("You win! " + playerChoice + " beats " + computerChoice)
+        console.log(`You win! ${playerChoice} beats ${computerChoice}`)
+        console.log(`Player score: ${playerScore} : computerScore: ${computerScore}`)
     }
     else {
         computerScore++;
-        console.log("You lose! " + computerChoice + " beats " + playerChoice)
+        console.log(`You lose! ${computerChoice} beats ${playerChoice}`)
+        console.log(`Player score: ${playerScore} : computerScore: ${computerScore}`)
+    }
+
+    if (playerScore === 5) {
+        alert("You win!!!")
+    }
+    else if (computerScore === 5) {
+        alert("You lose! :(")
     }
 }
 
@@ -66,39 +71,4 @@ gameButton.forEach((button) => {
         playRound(playerChoice, computerChoice);
     })
 })
-// function playGame() {
-//    let playerSelection;
-//    let computerSelection;
-
-//     playerSelection = getPlayerChoice().toLowerCase();
-//     computerSelection = getComputerChoice()
-//     playRound(playerSelection, computerSelection);
-    
-    
-//     playerSelection = getPlayerChoice().toLowerCase();
-//     computerSelection = getComputerChoice()
-//     playRound(playerSelection, computerSelection);
-    
-
-//     playerSelection = getPlayerChoice().toLowerCase();
-//     computerSelection = getComputerChoice()
-//     playRound(playerSelection, computerSelection);
-    
-
-//     playerSelection = getPlayerChoice().toLowerCase();
-//     computerSelection = getComputerChoice()
-//     playRound(playerSelection, computerSelection);
-    
-
-//     playerSelection = getPlayerChoice().toLowerCase();
-//     computerSelection = getComputerChoice()
-//     playRound(playerSelection, computerSelection);
-
-//     console.log("You chose " + playerSelection);
-//     console.log("PC chose " + computerSelection);
-// }
-    
-
-// playGame()
-// console.log(playerScore, computerScore)
 
