@@ -11,21 +11,9 @@ const newGameButton = document.querySelector("#newGameButton")
 const gameButton = document.querySelectorAll(".gameButton");
 
 function getComputerChoice() {
-    let scissors = "scissors";
-    let paper = "paper";
-    let rock = "rock";
-
-    let random = Math.floor(Math.random() * 3) + 1;
-
-    if (random === 1) {
-        return scissors;
-    }
-    else if (random === 2) {
-        return paper
-    }
-    else {
-        return rock
-    }
+    const choices = ["rock", "paper", "scissors"];
+    const randomIndex = Math.floor(Math.random() * choices.length);
+    return choices[randomIndex];
 }
 
 function getPlayerChoice(button) {
@@ -44,6 +32,7 @@ function resetGame() {
     playerScoreText.textContent = `Player Score: ${playerScore}`
     computerScoreText.textContent = `Computer Score: ${computerScore}`
     gameMessageText.textContent = "There can only be one."
+    gameButton.forEach(button => button.disabled = false);
 }
 
 function playRound(playerChoice, computerChoice) {
@@ -68,11 +57,11 @@ function playRound(playerChoice, computerChoice) {
 
     if (playerScore === 5) {
         gameMessageText.textContent = "Nice win kid, now don't get cocky."
-        resetGame();
-    }
+        gameButton.forEach(button => button.disabled = true);
+    }   
     else if (computerScore === 5) {
         gameMessageText.textContent = "I've seen this happen in Terminator 2..."
-        resetGame();
+        gameButton.forEach(button => button.disabled = true);
     }
 }
 
@@ -86,6 +75,23 @@ gameButton.forEach((button) => {
         playRound(playerChoice, computerChoice);
     })
 })
+
+// function onClick(event) {
+//     const button = event.currentTarget;
+
+//     let playerChoice = getPlayerChoice(button);
+//     let computerChoice = getComputerChoice();
+
+//     console.log(`Computer's Choice: ${computerChoice}`);
+//     console.log(`Player's Choice: ${playerChoice}`);
+
+//     playRound(playerChoice, computerChoice);
+// }
+
+// gameButton.forEach((button) => {
+//     button.addEventListener("click", onClick);
+// });
+
 
 newGameButton.addEventListener("click", () => {
     resetGame();
